@@ -17,9 +17,16 @@ export class CustomerRoute{
         this.setupRoutes();
     }
 
-    setupRoutes(){
-        this.router.use("/greeting", GreetingRoute.getInstance().router);
-        this.router.use("/customer", CustomerRoute.getInstance().router);
+    private setupRoutes(){
+        this.router.get("/", (req:Request, res:Response) => {
+            res.send("Hello world customer");
+        });
+
+        this.router.post("/",(req:Request, res:Response) => {
+            const {name} = req.body;
+            res.send(`Hello ${name}` );
+        });
+
     }
 }
 

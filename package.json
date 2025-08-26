@@ -3,15 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node src/app.ts",
-    "buld":"tsc",
+    "watch:dev":"tsc --watch",
+    "dev": "nodemon --exec ts-node src/app.ts",
+    "buld": "tsc",
     "start": "node dist/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",
